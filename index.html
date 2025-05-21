@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header & Navigation -->
+  <!-- Header & Navigation - تصميم محسن شبيه بـ devin.ai -->
   <header id="header">
     <div class="container">
       <nav class="navbar">
@@ -49,34 +49,40 @@
           <li><a href="#contact" class="rtl-only font-ar">اتصل بنا</a></li>
         </ul>
         
-        <button id="language-toggle" class="language-toggle" aria-label="Toggle Language">
-          <i class="fas fa-globe"></i>
-        </button>
-        
-        <button id="menu-toggle" class="mobile-menu-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
+        <div class="right-nav">
+          <button id="language-toggle" class="language-toggle" aria-label="Toggle Language">
+            <i class="fas fa-globe"></i>
+          </button>
+          
+          <button id="menu-toggle" class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <div class="hamburger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
       </nav>
       
       <div id="mobile-menu" class="mobile-menu">
         <ul>
-          <li><a href="#home" class="ltr-only">Home</a></li>
-          <li><a href="#services" class="ltr-only">Services</a></li>
-          <li><a href="#about" class="ltr-only">About</a></li>
-          <li><a href="#portfolio" class="ltr-only">Portfolio</a></li>
-          <li><a href="#contact" class="ltr-only">Contact</a></li>
+          <li style="--i:0"><a href="#home" class="ltr-only">Home</a></li>
+          <li style="--i:1"><a href="#services" class="ltr-only">Services</a></li>
+          <li style="--i:2"><a href="#about" class="ltr-only">About</a></li>
+          <li style="--i:3"><a href="#portfolio" class="ltr-only">Portfolio</a></li>
+          <li style="--i:4"><a href="#contact" class="ltr-only">Contact</a></li>
           
-          <li><a href="#home" class="rtl-only font-ar">الرئيسية</a></li>
-          <li><a href="#services" class="rtl-only font-ar">الخدمات</a></li>
-          <li><a href="#about" class="rtl-only font-ar">من نحن</a></li>
-          <li><a href="#portfolio" class="rtl-only font-ar">أعمالنا</a></li>
-          <li><a href="#contact" class="rtl-only font-ar">اتصل بنا</a></li>
+          <li style="--i:0"><a href="#home" class="rtl-only font-ar">الرئيسية</a></li>
+          <li style="--i:1"><a href="#services" class="rtl-only font-ar">الخدمات</a></li>
+          <li style="--i:2"><a href="#about" class="rtl-only font-ar">من نحن</a></li>
+          <li style="--i:3"><a href="#portfolio" class="rtl-only font-ar">أعمالنا</a></li>
+          <li style="--i:4"><a href="#contact" class="rtl-only font-ar">اتصل بنا</a></li>
           
-          <li><a href="#" onclick="document.getElementById('language-toggle').click(); return false;" class="ltr-only">
+          <li style="--i:5"><a href="#" onclick="document.getElementById('language-toggle').click(); return false;" class="ltr-only">
             <i class="fas fa-globe"></i> Change Language
           </a></li>
           
-          <li><a href="#" onclick="document.getElementById('language-toggle').click(); return false;" class="rtl-only font-ar">
+          <li style="--i:5"><a href="#" onclick="document.getElementById('language-toggle').click(); return false;" class="rtl-only font-ar">
             <i class="fas fa-globe"></i> تغيير اللغة
           </a></li>
         </ul>
