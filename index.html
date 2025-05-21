@@ -1,83 +1,760 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Alpha Technology | تكنولوجيا ألفا</title>
-    <meta name="description" content="Alpha Technology - Professional IT services, software development, cloud solutions, and network services in Yemen" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta property="og:title" content="Alpha Technology | تكنولوجيا ألفا" />
-    <meta property="og:description" content="Professional IT services, software development, cloud solutions, and network services" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://AlphaTek706.github.io/alpha-technology/" />
-    <style>
-      /* Base tailwind styles */
-      @import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+<html lang="en" class="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Alpha Technology | تكنولوجيا ألفا</title>
+  <meta name="description" content="Alpha Technology - Professional IT services, software development, cloud solutions, and network services in Yemen" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Alpha Technology | تكنولوجيا ألفا" />
+  <meta property="og:description" content="Professional IT services, software development, cloud solutions, and network services" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://AlphaTek706.github.io/alpha-technology/" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <div class="logo-icon">α</div>
+          <div class="logo-text ltr-only">Alpha Technology</div>
+          <div class="logo-text rtl-only font-ar">تكنولوجيا ألفا</div>
+        </a>
+        
+        <ul class="nav-links">
+          <li><a href="#home" class="ltr-only">Home</a></li>
+          <li><a href="#services" class="ltr-only">Services</a></li>
+          <li><a href="#about" class="ltr-only">About</a></li>
+          <li><a href="#portfolio" class="ltr-only">Portfolio</a></li>
+          <li><a href="#contact" class="ltr-only">Contact</a></li>
+          
+          <li><a href="#home" class="rtl-only font-ar">الرئيسية</a></li>
+          <li><a href="#services" class="rtl-only font-ar">الخدمات</a></li>
+          <li><a href="#about" class="rtl-only font-ar">من نحن</a></li>
+          <li><a href="#portfolio" class="rtl-only font-ar">أعمالنا</a></li>
+          <li><a href="#contact" class="rtl-only font-ar">اتصل بنا</a></li>
+        </ul>
+        
+        <button id="language-toggle" class="language-toggle" aria-label="Toggle Language">
+          <i class="fas fa-globe"></i>
+        </button>
+        
+        <button id="menu-toggle" class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
       
-      /* Custom styles for Alpha Technology */
-      :root {
-        --primary: 214, 90%, 40%;
-        --primary-light: 214, 90%, 54%;
-        --primary-dark: 214, 90%, 30%;
-        --secondary: 197, 90%, 48%;
-        --secondary-light: 199, 90%, 59%;
-        --secondary-dark: 200, 90%, 40%;
-        --accent: 160, 84%, 39%;
-        --neutral: 218, 35%, 18%;
-        --neutral-light: 217, 33%, 30%;
-        --neutral-dark: 222, 47%, 10%;
-      }
-      
-      .rtl {
-        direction: rtl;
-      }
-      
-      .ltr .rtl-only {
-        display: none;
-      }
-      
-      .rtl .ltr-only {
-        display: none;
-      }
-      
-      .font-ar {
-        font-family: 'Cairo', sans-serif;
-      }
-      
-      .font-en {
-        font-family: 'Poppins', sans-serif;
-      }
-      
-      .text-body {
-        font-family: 'Inter', sans-serif;
-      }
-      
-      body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f1f5f9;
-        color: #1a2332;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root">
-      <div class="flex flex-col min-h-screen justify-center items-center text-center p-6">
-        <div class="w-20 h-20 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold text-4xl mb-6">
-          α
+      <div id="mobile-menu" class="mobile-menu">
+        <ul>
+          <li><a href="#home" class="ltr-only">Home</a></li>
+          <li><a href="#services" class="ltr-only">Services</a></li>
+          <li><a href="#about" class="ltr-only">About</a></li>
+          <li><a href="#portfolio" class="ltr-only">Portfolio</a></li>
+          <li><a href="#contact" class="ltr-only">Contact</a></li>
+          
+          <li><a href="#home" class="rtl-only font-ar">الرئيسية</a></li>
+          <li><a href="#services" class="rtl-only font-ar">الخدمات</a></li>
+          <li><a href="#about" class="rtl-only font-ar">من نحن</a></li>
+          <li><a href="#portfolio" class="rtl-only font-ar">أعمالنا</a></li>
+          <li><a href="#contact" class="rtl-only font-ar">اتصل بنا</a></li>
+          
+          <li><a href="#" onclick="document.getElementById('language-toggle').click(); return false;" class="ltr-only">
+            <i class="fas fa-globe"></i> Change Language
+          </a></li>
+          
+          <li><a href="#" onclick="document.getElementById('language-toggle').click(); return false;" class="rtl-only font-ar">
+            <i class="fas fa-globe"></i> تغيير اللغة
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-heading ltr-only">
+            <span>Advanced</span> Technology Solutions for Your Business
+          </h1>
+          <h1 class="hero-heading rtl-only font-ar">
+            حلول <span>تكنولوجية</span> متقدمة لأعمالك ومشاريعك
+          </h1>
+          
+          <p class="hero-description ltr-only">
+            Alpha Technology provides innovative IT solutions, software development, cloud services, and network infrastructure to help your business thrive in the digital era.
+          </p>
+          <p class="hero-description rtl-only font-ar">
+            تقدم تكنولوجيا ألفا حلولاً تقنية مبتكرة وتطوير برمجيات وخدمات سحابية وبنية تحتية للشبكات لمساعدة عملك على الازدهار في العصر الرقمي.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#services" class="primary-button">
+              <span class="ltr-only">Our Services</span>
+              <span class="rtl-only font-ar">خدماتنا</span>
+              <i class="fas fa-arrow-right ltr-only ml-2"></i>
+              <i class="fas fa-arrow-left rtl-only mr-2"></i>
+            </a>
+            <a href="#contact" class="secondary-button">
+              <span class="ltr-only">Contact Us</span>
+              <span class="rtl-only font-ar">اتصل بنا</span>
+            </a>
+          </div>
         </div>
-        <h1 class="text-3xl font-bold mb-4">Alpha Technology</h1>
-        <h2 class="text-3xl font-bold mb-4 font-ar">تكنولوجيا ألفا</h2>
-        <p class="text-gray-600 mb-8 max-w-md">Professional IT services, software development, cloud solutions, and network services in Yemen</p>
-        <div class="space-y-4">
-          <p>The complete website is being prepared for GitHub Pages.</p>
-          <p>Please check back soon!</p>
+        
+        <div class="hero-image">
+          <div class="image-border">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Alpha Technology - Modern IT solutions">
+          </div>
+          
+          <div class="floating-icon">
+            <i class="fas fa-cloud text-blue-500 text-xl"></i>
+          </div>
+          
+          <div class="floating-icon">
+            <i class="fas fa-code text-blue-500 text-xl"></i>
+          </div>
+        </div>
+      </div>
+      
+      <div class="clients-section">
+        <h3 class="clients-title ltr-only">Trusted by businesses across industries</h3>
+        <h3 class="clients-title rtl-only font-ar">نحظى بثقة الشركات في مختلف القطاعات</h3>
+        
+        <div class="clients-logos">
+          <div class="client-logo">
+            <i class="fas fa-briefcase text-neutral text-3xl"></i>
+          </div>
+          <div class="client-logo">
+            <i class="fas fa-search text-neutral text-3xl"></i>
+          </div>
+          <div class="client-logo">
+            <i class="fas fa-credit-card text-neutral text-3xl"></i>
+          </div>
+          <div class="client-logo">
+            <i class="fas fa-paint-brush text-neutral text-3xl"></i>
+          </div>
+          <div class="client-logo">
+            <i class="fas fa-users text-neutral text-3xl"></i>
+          </div>
         </div>
       </div>
     </div>
-  </body>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge ltr-only">Our Services</span>
+        <span class="section-badge rtl-only font-ar">خدماتنا</span>
+        
+        <h2 class="section-title ltr-only">Comprehensive Tech Solutions</h2>
+        <h2 class="section-title rtl-only font-ar">حلول تقنية شاملة</h2>
+        
+        <p class="section-description ltr-only">
+          We provide end-to-end technology services to help your business succeed in the digital world with custom solutions tailored to your needs.
+        </p>
+        <p class="section-description rtl-only font-ar">
+          نقدم خدمات تكنولوجية متكاملة لمساعدة عملك على النجاح في العالم الرقمي مع حلول مخصصة تناسب احتياجاتك.
+        </p>
+      </div>
+      
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon bg-blue-100">
+            <i class="fas fa-code text-blue-500"></i>
+          </div>
+          <h3 class="service-title ltr-only">Software Development</h3>
+          <h3 class="service-title rtl-only font-ar">تطوير البرمجيات</h3>
+          <p class="service-description ltr-only">
+            Custom software solutions, web applications, and mobile apps built with cutting-edge technologies to meet your business requirements.
+          </p>
+          <p class="service-description rtl-only font-ar">
+            حلول برمجية مخصصة وتطبيقات ويب وتطبيقات جوال مبنية بأحدث التقنيات لتلبية متطلبات عملك.
+          </p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon bg-cyan-100">
+            <i class="fas fa-cloud text-cyan-500"></i>
+          </div>
+          <h3 class="service-title ltr-only">Cloud Services</h3>
+          <h3 class="service-title rtl-only font-ar">الخدمات السحابية</h3>
+          <p class="service-description ltr-only">
+            Secure and scalable cloud solutions for storage, computing, and application hosting to optimize your business operations.
+          </p>
+          <p class="service-description rtl-only font-ar">
+            حلول سحابية آمنة وقابلة للتوسع للتخزين والحوسبة واستضافة التطبيقات لتحسين عمليات عملك.
+          </p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon bg-emerald-100">
+            <i class="fas fa-network-wired text-emerald-500"></i>
+          </div>
+          <h3 class="service-title ltr-only">Network Solutions</h3>
+          <h3 class="service-title rtl-only font-ar">حلول الشبكات</h3>
+          <p class="service-description ltr-only">
+            Comprehensive network infrastructure design, implementation, and management to ensure reliable connectivity for your business.
+          </p>
+          <p class="service-description rtl-only font-ar">
+            تصميم وتنفيذ وإدارة شاملة للبنية التحتية للشبكات لضمان اتصال موثوق لعملك.
+          </p>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-icon bg-indigo-100">
+            <i class="fas fa-desktop text-indigo-500"></i>
+          </div>
+          <h3 class="service-title ltr-only">IT Systems & Applications</h3>
+          <h3 class="service-title rtl-only font-ar">الأنظمة والتطبيقات</h3>
+          <p class="service-description ltr-only">
+            Enterprise-grade IT systems and business applications that automate processes and enhance productivity across your organization.
+          </p>
+          <p class="service-description rtl-only font-ar">
+            أنظمة تكنولوجيا المعلومات وتطبيقات الأعمال على مستوى المؤسسات التي تعمل على أتمتة العمليات وتعزيز الإنتاجية في مؤسستك.
+          </p>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-icon bg-amber-100">
+            <i class="fas fa-globe text-amber-500"></i>
+          </div>
+          <h3 class="service-title ltr-only">Website Development</h3>
+          <h3 class="service-title rtl-only font-ar">تطوير المواقع الإلكترونية</h3>
+          <p class="service-description ltr-only">
+            Professional and responsive websites with modern designs, optimized for search engines and exceptional user experience.
+          </p>
+          <p class="service-description rtl-only font-ar">
+            مواقع إلكترونية احترافية ومتجاوبة بتصميمات عصرية، محسنة لمحركات البحث وتجربة مستخدم استثنائية.
+          </p>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="service-icon bg-rose-100">
+            <i class="fas fa-shield-alt text-rose-500"></i>
+          </div>
+          <h3 class="service-title ltr-only">Security & Surveillance</h3>
+          <h3 class="service-title rtl-only font-ar">الأمن والمراقبة</h3>
+          <p class="service-description ltr-only">
+            Advanced security systems and surveillance solutions with high-quality cameras to protect your business assets and premises.
+          </p>
+          <p class="service-description rtl-only font-ar">
+            أنظمة أمان متقدمة وحلول مراقبة بكاميرات عالية الجودة لحماية أصول وممتلكات عملك.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Alpha Technology Team">
+          
+          <div class="experience-badge">
+            <div class="experience-icon">
+              <i class="fas fa-award text-blue-500"></i>
+            </div>
+            <div class="experience-text">
+              <small class="ltr-only">Years of Experience</small>
+              <small class="rtl-only font-ar">سنوات من الخبرة</small>
+              <p>5+</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-text">
+          <span class="section-badge ltr-only">About Us</span>
+          <span class="section-badge rtl-only font-ar">من نحن</span>
+          
+          <h2 class="section-title ltr-only">We Deliver Advanced Technology Solutions</h2>
+          <h2 class="section-title rtl-only font-ar">نقدم حلول تكنولوجية متقدمة</h2>
+          
+          <p class="ltr-only">
+            Alpha Technology is a leading technology company providing comprehensive IT solutions, software development, cloud services, and network infrastructure to businesses of all sizes.
+          </p>
+          <p class="rtl-only font-ar">
+            تكنولوجيا ألفا هي شركة تكنولوجية رائدة تقدم حلول تكنولوجيا معلومات شاملة، وتطوير برمجيات، وخدمات سحابية، وبنية تحتية للشبكات للشركات بجميع أحجامها.
+          </p>
+          
+          <p class="ltr-only">
+            Our team of expert engineers and developers work diligently to provide innovative and tailored solutions that meet the unique needs of our clients, helping them stay ahead in today's digital landscape.
+          </p>
+          <p class="rtl-only font-ar">
+            يعمل فريقنا من المهندسين والمطورين الخبراء بجد لتقديم حلول مبتكرة ومخصصة تلبي الاحتياجات الفريدة لعملائنا، مما يساعدهم على البقاء في المقدمة في المشهد الرقمي اليوم.
+          </p>
+          
+          <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check text-blue-500 text-sm"></i>
+              </div>
+              <div class="feature-info">
+                <h4 class="ltr-only">Expert Team</h4>
+                <h4 class="rtl-only font-ar">فريق من الخبراء</h4>
+                <p class="ltr-only">Highly skilled professionals</p>
+                <p class="rtl-only font-ar">محترفون ذوو مهارات عالية</p>
+              </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check text-blue-500 text-sm"></i>
+              </div>
+              <div class="feature-info">
+                <h4 class="ltr-only">Custom Solutions</h4>
+                <h4 class="rtl-only font-ar">حلول مخصصة</h4>
+                <p class="ltr-only">Tailored to your needs</p>
+                <p class="rtl-only font-ar">مصممة حسب احتياجاتك</p>
+              </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check text-blue-500 text-sm"></i>
+              </div>
+              <div class="feature-info">
+                <h4 class="ltr-only">Cutting-Edge Tech</h4>
+                <h4 class="rtl-only font-ar">تقنيات متطورة</h4>
+                <p class="ltr-only">Latest technologies</p>
+                <p class="rtl-only font-ar">أحدث التقنيات</p>
+              </div>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-check text-blue-500 text-sm"></i>
+              </div>
+              <div class="feature-info">
+                <h4 class="ltr-only">Reliable Support</h4>
+                <h4 class="rtl-only font-ar">دعم موثوق</h4>
+                <p class="ltr-only">24/7 customer service</p>
+                <p class="rtl-only font-ar">خدمة عملاء على مدار الساعة</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="#contact" class="learn-more">
+            <span class="ltr-only">Learn more about us</span>
+            <span class="rtl-only font-ar">اعرف المزيد عنا</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge ltr-only">Our Work</span>
+        <span class="section-badge rtl-only font-ar">أعمالنا</span>
+        
+        <h2 class="section-title ltr-only">Featured Projects</h2>
+        <h2 class="section-title rtl-only font-ar">مشاريعنا المميزة</h2>
+        
+        <p class="section-description ltr-only">
+          Explore our portfolio of successful projects delivered to clients across various industries.
+        </p>
+        <p class="section-description rtl-only font-ar">
+          استكشف مجموعة مشاريعنا الناجحة التي قدمناها للعملاء في مختلف الصناعات.
+        </p>
+      </div>
+      
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" alt="Enterprise Resource Planning System">
+            <div class="project-overlay">
+              <div class="project-category bg-blue-600 ltr-only">Software Development</div>
+              <div class="project-category bg-blue-600 rtl-only font-ar">تطوير البرمجيات</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title ltr-only">Enterprise Resource Planning System</h3>
+            <h3 class="project-title rtl-only font-ar">نظام تخطيط موارد المؤسسات</h3>
+            <p class="project-description ltr-only">
+              A comprehensive ERP solution for a manufacturing company that streamlined operations and increased efficiency.
+            </p>
+            <p class="project-description rtl-only font-ar">
+              حل شامل لتخطيط موارد المؤسسات لشركة تصنيع ساهم في تبسيط العمليات وزيادة الكفاءة.
+            </p>
+            <a href="#" class="view-project">
+              <span class="ltr-only">View Project</span>
+              <span class="rtl-only font-ar">عرض المشروع</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" alt="Cloud Infrastructure Migration">
+            <div class="project-overlay">
+              <div class="project-category bg-cyan-600 ltr-only">Cloud Services</div>
+              <div class="project-category bg-cyan-600 rtl-only font-ar">الخدمات السحابية</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title ltr-only">Cloud Infrastructure Migration</h3>
+            <h3 class="project-title rtl-only font-ar">ترحيل البنية التحتية السحابية</h3>
+            <p class="project-description ltr-only">
+              Successfully migrated a financial institution's infrastructure to the cloud, enhancing security and reducing costs.
+            </p>
+            <p class="project-description rtl-only font-ar">
+              نقل ناجح للبنية التحتية لمؤسسة مالية إلى السحابة، مما عزز الأمان وقلل التكاليف.
+            </p>
+            <a href="#" class="view-project">
+              <span class="ltr-only">View Project</span>
+              <span class="rtl-only font-ar">عرض المشروع</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" alt="E-commerce Platform">
+            <div class="project-overlay">
+              <div class="project-category bg-emerald-600 ltr-only">Web Development</div>
+              <div class="project-category bg-emerald-600 rtl-only font-ar">تطوير الويب</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title ltr-only">E-commerce Platform</h3>
+            <h3 class="project-title rtl-only font-ar">منصة تجارة إلكترونية</h3>
+            <p class="project-description ltr-only">
+              A fully responsive e-commerce website with integrated payment systems for a retail client, boosting online sales.
+            </p>
+            <p class="project-description rtl-only font-ar">
+              موقع تجارة إلكترونية متجاوب بالكامل مع أنظمة دفع متكاملة لعميل تجزئة، مما عزز المبيعات عبر الإنترنت.
+            </p>
+            <a href="#" class="view-project">
+              <span class="ltr-only">View Project</span>
+              <span class="rtl-only font-ar">عرض المشروع</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="view-all-projects">
+        <a href="#" class="secondary-button">
+          <span class="ltr-only">View All Projects</span>
+          <span class="rtl-only font-ar">عرض جميع المشاريع</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-text">
+          <h2 class="cta-title ltr-only">Ready to Transform Your Business?</h2>
+          <h2 class="cta-title rtl-only font-ar">هل أنت مستعد لتحويل عملك؟</h2>
+          <p class="cta-description ltr-only">
+            Contact us today to discuss how our technology solutions can help your business grow and succeed in the digital age.
+          </p>
+          <p class="cta-description rtl-only font-ar">
+            اتصل بنا اليوم لمناقشة كيف يمكن لحلولنا التكنولوجية أن تساعد عملك على النمو والنجاح في العصر الرقمي.
+          </p>
+        </div>
+        
+        <a href="#contact" class="cta-button">
+          <span class="ltr-only">Get Started</span>
+          <span class="rtl-only font-ar">ابدأ الآن</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge ltr-only">Contact Us</span>
+        <span class="section-badge rtl-only font-ar">اتصل بنا</span>
+        
+        <h2 class="section-title ltr-only">Get in Touch</h2>
+        <h2 class="section-title rtl-only font-ar">تواصل معنا</h2>
+        
+        <p class="section-description ltr-only">
+          Have a question or need assistance? Contact our team and we'll get back to you as soon as possible.
+        </p>
+        <p class="section-description rtl-only font-ar">
+          هل لديك سؤال أو تحتاج إلى مساعدة؟ اتصل بفريقنا وسنرد عليك في أقرب وقت ممكن.
+        </p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3 class="contact-info-title ltr-only">Contact Information</h3>
+          <h3 class="contact-info-title rtl-only font-ar">معلومات الاتصال</h3>
+          
+          <!-- Address -->
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt text-blue-500"></i>
+            </div>
+            <div class="contact-detail">
+              <h4 class="ltr-only">Address</h4>
+              <h4 class="rtl-only font-ar">العنوان</h4>
+              <p class="ltr-only">Dhamar, Yemen - Haran, Near Police Station</p>
+              <p class="rtl-only font-ar">ذمار اليمن في هران جوار قسم الشرطة</p>
+            </div>
+          </div>
+          
+          <!-- Email -->
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope text-blue-500"></i>
+            </div>
+            <div class="contact-detail">
+              <h4 class="ltr-only">Email</h4>
+              <h4 class="rtl-only font-ar">البريد الإلكتروني</h4>
+              <a href="mailto:tekalpha764@gmail.com">tekalpha764@gmail.com</a>
+            </div>
+          </div>
+          
+          <!-- Phone -->
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt text-blue-500"></i>
+            </div>
+            <div class="contact-detail">
+              <h4 class="ltr-only">Phone</h4>
+              <h4 class="rtl-only font-ar">الهاتف</h4>
+              <a href="tel:+967777205214">+967 777 205 214</a>
+            </div>
+          </div>
+          
+          <!-- Facebook -->
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fab fa-facebook-f text-blue-500"></i>
+            </div>
+            <div class="contact-detail">
+              <h4 class="ltr-only">Facebook</h4>
+              <h4 class="rtl-only font-ar">فيسبوك</h4>
+              <a href="https://www.facebook.com/profile.php?id=61576298978304" target="_blank" class="ltr-only">Alpha Technology</a>
+              <a href="https://www.facebook.com/profile.php?id=61576298978304" target="_blank" class="rtl-only font-ar">تكنولوجيا ألفا</a>
+            </div>
+          </div>
+          
+          <!-- Social Links -->
+          <div class="social-links">
+            <h4 class="ltr-only">Follow Us</h4>
+            <h4 class="rtl-only font-ar">تابعنا</h4>
+            
+            <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=61576298978304" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-container">
+          <form id="contact-form" class="contact-form">
+            <h3 class="form-title ltr-only">Send us a Message</h3>
+            <h3 class="form-title rtl-only font-ar">أرسل لنا رسالة</h3>
+            
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name" class="form-label ltr-only">Full Name</label>
+                <label for="name" class="form-label rtl-only font-ar">الاسم الكامل</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe">
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="form-label ltr-only">Email Address</label>
+                <label for="email" class="form-label rtl-only font-ar">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label ltr-only">Subject</label>
+              <label for="subject" class="form-label rtl-only font-ar">الموضوع</label>
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="How can we help you?">
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label ltr-only">Message</label>
+              <label for="message" class="form-label rtl-only font-ar">الرسالة</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Your message..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">
+              <span class="form-spinner"></span>
+              <span class="ltr-only">Send Message</span>
+              <span class="rtl-only font-ar">إرسال الرسالة</span>
+            </button>
+            
+            <div id="form-message" class="form-message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">
+            <div class="footer-logo-icon">α</div>
+            <div class="footer-logo-text ltr-only">Alpha Technology</div>
+            <div class="footer-logo-text rtl-only font-ar">تكنولوجيا ألفا</div>
+          </div>
+          
+          <p class="footer-about ltr-only">
+            Providing innovative technology solutions to help businesses thrive in the digital era.
+          </p>
+          <p class="footer-about rtl-only font-ar">
+            نقدم حلولاً تكنولوجية مبتكرة لمساعدة الشركات على الازدهار في العصر الرقمي.
+          </p>
+          
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61576298978304" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="footer-title ltr-only">Services</h3>
+          <h3 class="footer-title rtl-only font-ar">الخدمات</h3>
+          
+          <ul class="footer-links ltr-only">
+            <li><a href="#services">Software Development</a></li>
+            <li><a href="#services">Cloud Services</a></li>
+            <li><a href="#services">Network Solutions</a></li>
+            <li><a href="#services">IT Systems & Applications</a></li>
+            <li><a href="#services">Website Development</a></li>
+            <li><a href="#services">Security & Surveillance</a></li>
+          </ul>
+          
+          <ul class="footer-links rtl-only">
+            <li><a href="#services" class="font-ar">تطوير البرمجيات</a></li>
+            <li><a href="#services" class="font-ar">الخدمات السحابية</a></li>
+            <li><a href="#services" class="font-ar">حلول الشبكات</a></li>
+            <li><a href="#services" class="font-ar">الأنظمة والتطبيقات</a></li>
+            <li><a href="#services" class="font-ar">تطوير المواقع الإلكترونية</a></li>
+            <li><a href="#services" class="font-ar">الأمن والمراقبة</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-title ltr-only">Quick Links</h3>
+          <h3 class="footer-title rtl-only font-ar">روابط سريعة</h3>
+          
+          <ul class="footer-links ltr-only">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          
+          <ul class="footer-links rtl-only">
+            <li><a href="#home" class="font-ar">الرئيسية</a></li>
+            <li><a href="#about" class="font-ar">من نحن</a></li>
+            <li><a href="#services" class="font-ar">الخدمات</a></li>
+            <li><a href="#portfolio" class="font-ar">أعمالنا</a></li>
+            <li><a href="#contact" class="font-ar">اتصل بنا</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="footer-title ltr-only">Contact Us</h3>
+          <h3 class="footer-title rtl-only font-ar">اتصل بنا</h3>
+          
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+            <span class="ltr-only">Dhamar, Yemen - Haran, Near Police Station</span>
+            <span class="rtl-only font-ar">ذمار اليمن في هران جوار قسم الشرطة</span>
+          </div>
+          
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope footer-contact-icon"></i>
+            <a href="mailto:tekalpha764@gmail.com">tekalpha764@gmail.com</a>
+          </div>
+          
+          <div class="footer-contact-item">
+            <i class="fas fa-phone-alt footer-contact-icon"></i>
+            <a href="tel:+967777205214">+967 777 205 214</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="ltr-only">© 2025 Alpha Technology. All rights reserved.</p>
+        <p class="rtl-only font-ar">© 2025 تكنولوجيا ألفا. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+</body>
 </html>
