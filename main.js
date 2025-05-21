@@ -1,9 +1,39 @@
-// كود جافاسكريبت أساسي للموقع
+// كود جافاسكريبت محسن للموقع مع تأثيرات إضافية
 document.addEventListener('DOMContentLoaded', function() {
+  // تطبيق تأثيرات التمرير والتحسينات مثل devin.ai
+  let lastScrollTop = 0;
+  const header = document.getElementById('header');
+  
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.scrollY;
+    
+    // تغيير مظهر الهيدر عند التمرير
+    if (scrollTop > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // إخفاء/إظهار الهيدر عند التمرير للأعلى/للأسفل
+    if (scrollTop > lastScrollTop && scrollTop > 150) {
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      header.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+  
   // تبديل اللغة
   const languageToggle = document.getElementById('language-toggle');
   if (languageToggle) {
     languageToggle.addEventListener('click', function() {
+      // تحريك الزر عند النقر عليه
+      this.classList.add('clicked');
+      setTimeout(() => {
+        this.classList.remove('clicked');
+      }, 300);
+      
       document.documentElement.classList.toggle('rtl');
       document.documentElement.classList.toggle('ltr');
       
@@ -65,12 +95,40 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
+        // إغلاق القائمة المتنقلة إذا كانت مفتوحة
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          mobileMenu.classList.remove('open');
+          menuToggle.classList.remove('active');
+        }
+        
         window.scrollTo({
           top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
       }
     });
+  });
+  
+  // تأثير ظهور العناصر عند التمرير
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+  
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      
+      entry.target.classList.add('appear');
+      observer.unobserve(entry.target);
+    });
+  }, observerOptions);
+  
+  // تطبيق تأثيرات الظهور على العناصر المهمة
+  document.querySelectorAll('.service-card, .project-card, .floating-icon, .feature-item').forEach(el => {
+    el.classList.add('fade-in-element');
+    appearOnScroll.observe(el);
   });
   
   // تظهر زر العودة لأعلى الصفحة عند التمرير لأسفل
@@ -92,38 +150,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // نموذج الاتصال
+  // نموذج الاتصال مع تأثيرات تحميل
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // يمكن إضافة التحقق من صحة المدخلات هنا
+      // إظهار حالة التحميل
+      this.classList.add('submitting');
       
-      // إظهار رسالة تأكيد
-      const messageEl = document.getElementById('form-message');
-      if (messageEl) {
-        const currentLang = localStorage.getItem('language') || 'en';
-        messageEl.textContent = currentLang === 'en' 
-          ? 'Thank you! Your message has been sent successfully.'
-          : 'شكراً لك! تم إرسال رسالتك بنجاح.';
-        messageEl.classList.add('success');
-        messageEl.style.display = 'block';
-      }
-      
-      // إعادة تعيين النموذج
-      contactForm.reset();
+      // محاكاة تأخير الإرسال
+      setTimeout(() => {
+        this.classList.remove('submitting');
+        
+        // إظهار رسالة تأكيد
+        const messageEl = document.getElementById('form-message');
+        if (messageEl) {
+          const currentLang = localStorage.getItem('language') || 'en';
+          messageEl.textContent = currentLang === 'en' 
+            ? 'Thank you! Your message has been sent successfully.'
+            : 'شكراً لك! تم إرسال رسالتك بنجاح.';
+          messageEl.classList.add('success');
+          messageEl.style.display = 'block';
+          
+          // إخفاء الرسالة بعد 5 ثواني
+          setTimeout(() => {
+            messageEl.style.display = 'none';
+          }, 5000);
+        }
+        
+        // إعادة تعيين النموذج
+        contactForm.reset();
+      }, 1500);
     });
   }
   
-  // تفعيل القائمة المتنقلة على الأجهزة المحمولة
+  // تفعيل القائمة المتنقلة على الأجهزة المحمولة - محسنة مثل devin.ai
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
       mobileMenu.classList.toggle('open');
-      menuToggle.classList.toggle('active');
+      
+      // منع التمرير عندما تكون القائمة مفتوحة
+      if (mobileMenu.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     });
     
     // إغلاق القائمة عند النقر على رابط
@@ -132,7 +208,35 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener('click', function() {
         mobileMenu.classList.remove('open');
         menuToggle.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
+    
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', function(e) {
+      if (mobileMenu.classList.contains('open') && 
+          !mobileMenu.contains(e.target) && 
+          !menuToggle.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
   }
+  
+  // تطبيق التأثيرات عند الظهور أول مرة
+  document.body.classList.add('loaded');
+  
+  // إضافة تأثيرات hover للبطاقات
+  const cards = document.querySelectorAll('.service-card, .project-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.classList.add('hover');
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.classList.remove('hover');
+    });
+  });
 });
